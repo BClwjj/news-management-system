@@ -1,0 +1,432 @@
+/* 设置根元素字体大小，方便后续用rem单位进行换算 */
+    :root {
+        --base-font-size: 16px;
+        --heading-font-weight: bold;
+        --body-font-family: Arial, sans-serif;
+    }
+
+    /* 整体页面基础设置 */
+    body {
+        font-family: var(--body-font-family);
+        font-size: var(--base-font-size);
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fc; /* 柔和的淡蓝色背景 */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative; /* 方便后续页脚定位 */
+    }
+
+    /* 头部整体样式，增加一些圆润感和阴影效果 */
+  .header {
+  		background:url("../images/header.jpg") no-repeat;
+  		background-size: 100% auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        padding: 15px 30px;
+        /*background-color: #2c5aa0; /* 深蓝色主体 */
+        border-radius: 0 0 10px 10px; /* 底部圆角 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 淡淡的阴影 */
+        position: relative; /* 为了让下面的伪元素定位准确 */
+    }
+
+    /* logo样式，适当调整图片显示效果 */
+  .logo {
+        flex: 1;
+        text-align: left;
+    }
+
+  .logo img {
+        width: 200px;
+        height: 60px;
+        vertical-align: middle;
+        border-radius: 5px; /* 图片也来点圆角 */
+        transition: transform 0.3s ease; /* 添加图片缩放过渡效果 */
+    }
+
+  .logo img:hover {
+        transform: scale(1.05); /* 鼠标悬停时图片稍放大 */
+    }
+
+    /* 联系方式样式，调整排版和颜色 */
+  .one p {
+        margin: 0 0 8px 0;
+        font-size: 0.8125rem; /* 换算后大概13px，使用相对单位rem */
+        line-height: 1.4;
+        color: #d8e0f0; /* 淡蓝色文字，与头部搭配协调 */
+        transition: color 0.3s ease; /* 文字颜色过渡效果 */
+    }
+
+  .one p:hover {
+        color: white; /* 鼠标悬停时文字变白色 */
+    }
+
+    /* 导航栏整体样式，更饱满的颜色和高度 */
+  .navbar {
+        background-color: #3366cc;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        border-radius: 10px; /* 导航栏整体圆角 */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        margin: 20px 0; /* 与上下内容间隔开 */
+    }
+
+    /* 导航栏列表样式 */
+  .nav-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around; /* 均匀分布导航项 */
+        width: 100%;
+    }
+
+    /* 导航栏每个项目样式 */
+  .nav-item {
+        text-align: center;
+        font-size: 1rem; /* 使用相对单位rem，基于根元素字体大小 */
+        width: auto; /* 自适应宽度 */
+        padding: 0 15px; /* 增加左右内边距，更美观 */
+        position: relative; /* 为了实现伪元素效果 */
+        transition: background-color 0.3s ease; /* 背景色过渡效果 */
+    }
+
+    /* 导航栏每个项目添加下划线效果，初始隐藏 */
+  .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease; /* 下划线宽度过渡效果 */
+    }
+
+    /* 导航栏链接样式 */
+  .nav-item a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: var(--heading-font-weight);
+        line-height: 70px;
+        display: block;
+        transition: color 0.3s ease; /* 文字颜色过渡 */
+    }
+
+    /* 导航栏鼠标悬停在链接上的样式，显示下划线并改变背景色 */
+  .nav-item:hover {
+        background-color: #2952a3;
+    }
+
+  .nav-item:hover::after {
+        width: 100%;
+    }
+
+    /* 导航栏鼠标按下时的样式 */
+  .nav-item:active {
+        background-color: #193980;
+    }
+
+    /* 页面主体布局，分为左右两部分，增加间距和圆角 */
+  .main-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex: 1;
+        align-items: flex-start;
+        border-radius: 10px; /* 整体圆角 */
+        background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* 淡淡的阴影 */
+    }
+
+    /* 搜索框样式，更圆润和协调的外观 */
+  .search-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%; /* 占满父元素宽度 */
+    }
+
+  .search-box input[type="text"] {
+        width: 350px;
+        height: 45px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: 2px solid #528fda;
+        border-radius: 25px 0 0 25px; /* 左侧输入框圆角 */
+        outline: none; /* 去掉默认聚焦边框 */
+        transition: border-color 0.3s ease; /* 边框颜色过渡 */
+    }
+
+  .search-box input[type="text"]:focus {
+        border-color: #3366cc; /* 输入框聚焦时边框颜色变化 */
+    }
+
+  .search-box input[type="submit"] {
+        width: 100px;
+        height: 45px;
+        background-color: #528fda;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 0 25px 25px 0; /* 右侧提交按钮圆角 */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+  .search-box input[type="submit"]:hover {
+        background-color: #5f9cfa;
+    }
+
+  /* 最新新闻和新闻列表标题样式 */
+.left-news h2 {
+    font-size: 1.25rem;
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3366cc;
+    padding-bottom: 8px;
+    transition: border-color 0.3s ease;
+}
+.left-news h2:hover {
+    border-color: #2952a3;
+}
+    /* 左边新闻列表样式，优化排版和交互效果 */
+  .left-news {
+        width: 65%;
+        background-color: transparent; /* 去掉白色背景，使用主体的半透明背景 */
+        box-shadow: none; /* 去掉原有的阴影 */
+        border-radius: 10px;
+        padding: 0;
+        margin-right: 20px;
+    }
+
+  .news-item {
+        text-decoration: none;
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 淡淡的阴影 */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+  .news-item:hover {
+        background-color: #f5f8fe;
+        transform: translateY(-3px); /* 鼠标悬停时向上稍微移动，增加层次感 */
+    }
+
+  .news-image {
+        width: 180px;
+        height: 100px;
+        margin-right: 20px;
+        border-radius: 8px;
+        object-fit: cover;
+        transition: transform 0.3s ease; /* 图片缩放过渡 */
+    }
+
+  .news-item:hover.news-image {
+        transform: scale(1.05); /* 鼠标悬停时图片放大 */
+    }
+
+  .news-title a {
+        text-decoration: none;
+        font-size: 1.375rem; /* 标题使用相对较大字号，更突出 */
+        font-weight: var(--heading-font-weight);
+        margin-bottom: 12px;
+        color: #2c5aa0;
+        transition: color 0.3s ease;
+    }
+
+  .news-title:hover {
+        color: #3366cc;
+        text-decoration: underline;
+    }
+
+  .news-content-preview {
+        font-size: 0.875rem; /* 内容预览使用稍小字号 */
+        color: #666;
+        line-height: 1.6;
+        overflow: hidden; /* 超出部分隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 显示三行文本后省略 */
+        -webkit-box-orient: vertical;
+        text-indent: 2em;
+    }
+
+    /* 右边新闻分类样式，优化排版和交互 */
+  .right-categories {
+        width: 30%;
+        background-color: transparent; /* 同样使用主体半透明背景 */
+        box-shadow: none;
+        border-radius: 10px;
+        padding: 0;
+        margin-left: 20px;
+    }
+
+  .category {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+    }
+
+  .category:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠标悬停时阴影加深 */
+    }
+
+  .category-title {
+        font-size: 1.125rem; /* 分类标题字号适中，比正文大些 */
+        margin-bottom: 15px;
+        color: #333;
+        border-bottom: 2px solid #3366cc;
+        padding-bottom: 8px;
+        transition: border-color 0.3s ease; /* 下划线颜色过渡 */
+    }
+
+  .category:hover.category-title {
+        border-color: #2952a3;
+    }
+
+  .category-news-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease; /* 鼠标悬停时背景色过渡 */
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+  .category-news-item:hover {
+        background-color: #f5f8fe;
+    }
+
+  .bullet {
+        margin-right: 10px;
+        color: #999;
+    }
+
+  .category-news-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 0.875rem; /* 分类新闻项字号较小 */
+        line-height: 1.4;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+
+  .category-news-item a:hover {
+        color: #3366cc;
+        padding-left: 8px;
+    }
+
+    /* 页尾样式，固定在底部且更美观的排版 */
+  .footer {
+        background-color: #2c5aa0;
+        color: white;
+        padding: 5px 0;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        border-radius: 10px 10px 0 0; /* 顶部圆角 */
+
+    }
+
+  .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+  .footer p {
+        margin: 8px 0;
+        font-size: 0.75rem; /* 页脚文字较小字号 */
+        color: #d8e0f0;
+        transition: color 0.3s ease;
+    }
+
+  .footer p:hover {
+        color: white;
+    }
+
+  .no-category-news {
+        text-align: center;
+        color: #666;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s ease;
+    }
+
+  .no-category-news:hover {
+        background-color: white;
+    }
+
+    /* 媒体查询，针对小屏幕设备调整字体大小等样式 */
+    @media screen and (max-width: 768px) {
+        :root {
+            --base-font-size: 14px; /* 根元素字体变小 */
+        }
+
+      .news-title a {
+            font-size: 1.25rem; /* 标题字体在小屏幕下适当缩小 */
+        }
+
+      .news-content-preview {
+            font-size: 0.8rem; /* 内容预览字体也相应缩小 */
+        }
+
+      .category-title {
+            font-size: 1rem; /* 分类标题字体缩小 */
+        }
+
+      .category-news-item a {
+            font-size: 0.8rem; /* 分类新闻项字体缩小 */
+        }
+
+      .footer p {
+            font-size: 0.625rem; /* 页脚文字进一步缩小 */
+        }
+    }
+
+    /* 媒体查询，针对大屏幕设备调整字体大小等样式 */
+    @media screen and (min-width: 1200px) {
+        :root {
+            --base-font-size: 18px; /* 根元素字体增大 */
+        }
+
+      .news-title a {
+            font-size: 1.5rem; /* 标题字体在大屏幕下适当增大 */
+        }
+
+      .news-content-preview {
+            font-size: 1rem; /* 内容预览字体也相应增大 */
+        }
+
+      .category-title {
+            font-size: 1.25rem; /* 分类标题字体增大 */
+        }
+
+      .category-news-item a {
+            font-size: 0.9375rem; /* 分类新闻项字体增大 */
+        }
+
+      .footer p {
+            font-size: 0.8125rem; /* 页脚文字增大 */
+        }
+    }

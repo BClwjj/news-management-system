@@ -1,0 +1,462 @@
+@charset "UTF-8";
+/* 内容区域整体样式 */
+.content {
+	margin: 20px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式 */
+.news-table {
+	width: 98%; /* 适当调整表格宽度，使其在内容区域内更协调 */
+	margin: 0 auto; /* 让表格在内容区域水平居中 */
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	margin-top: 20px;
+}
+
+/* 表头样式 */
+.news-table-header {
+	background-color: #528fda;
+	color: white;
+	font-weight: bold;
+	padding: 12px 15px;
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: 1px solid #ccc;
+	white-space: nowrap; /* 防止表头文字换行 */
+}
+
+/* 表格单元格样式 */
+.news-table-cell {
+	padding: 12px 15px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+/* 鼠标悬停行样式 */
+.news-table-row-hover:hover {
+	background-color: #f9f9f9;
+}
+
+/* 链接样式 */
+.news-link {
+	text-decoration: none;
+	color: #007BFF;
+}
+
+/* 鼠标悬停链接样式 */
+.news-link:hover {
+	text-decoration: underline;
+}
+
+/* 编辑与删除按钮所在单元格样式 */
+.action-cell {
+	text-align: center;
+}
+
+/* 分页导航样式 */
+.pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.pagination a {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 0 5px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #333;
+	background-color: white;
+}
+
+.pagination a:hover {
+	background-color: #f9f9f9;
+	border-color: #528fda;
+}
+
+.pagination.current-page {
+	background-color: #528fda;
+	color: white;
+	border-color: #528fda;
+}
+
+
+/*所有新闻列表样式*/
+/* 新闻列表整体容器样式 */
+.news-list-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden; /* 确保子元素的圆角不会影响到容器 */
+}
+
+/* 每条新闻的容器样式 */
+.news-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    transition: all 0.3s ease;
+}
+.news-item:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 新闻图片样式 */
+.news-item-image {
+    width: 250px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* 新闻标题链接样式 */
+.news-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.news-item-link:hover {
+    text-decoration: underline;
+    color: #2952a3;
+}
+
+/* 新闻标题样式 */
+.news-item-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #222;
+    transition: color 0.3s ease;
+}
+.news-item-title a:hover {
+    border-color: #2952a3;
+    text-decoration:underline;
+}
+
+/* 新闻内容样式 */
+.news-item-content {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* 作者和时间容器样式 */
+.news-item-author-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+/* 添加新聞頁面樣式 */
+/* 表单容器样式 */
+.add-news-form-container {
+	max-width: 700px;
+	margin: 30px auto;
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	color: #333;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+input[type="text"], textarea {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	font-size: 14px;
+	box-sizing: border-box; /* 确保padding不影响宽度 */
+}
+
+input[type="submit"] {
+	background-color: #007bff; /* 绿色按钮 */
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+input[type="submit"]:hover {
+	background-color: #4cae4c; /* 鼠标悬停时的深色 */
+}
+
+/* 响应式设计 */
+@media ( max-width : 768px) {
+	.add-news-form-container {
+		width: 90%;
+		padding: 20px;
+	}
+}
+
+
+/*新聞詳情樣式*/
+/* 推荐新闻整体容器样式 */
+.recommend-news-container {
+    width: 70%;
+    margin:0 auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-top: none;
+}
+
+/* 推荐新闻标题样式 */
+.recommend-news-title {
+    
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 每条推荐新闻的容器样式 */
+.recommend-news-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+/* 推荐新闻图片样式 */
+.recommend-news-image {
+    width: 250px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+
+/* 推荐新闻标题样式 */
+.recommend-news-heading {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #2c5aa0;
+    padding-bottom: 8px;
+    transition: border-color 0.3s ease;
+}
+
+/* 推荐新闻标题链接样式 */
+.recommend-news-heading a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.recommend-news-heading a:hover {
+    border-color: #2952a3;
+    text-decoration:underline;
+}
+/* 推荐新闻内容样式 */
+.recommend-news-content {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 标题样式 */
+.news-title {
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 信息段落通用样式 */
+.info-paragraph {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 作者、类型、时间所在容器样式，用于控制排列等 */
+.info-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* 作者、类型、时间样式 */
+.info-container p {
+    margin-right: 20px;
+}
+
+/* 横线样式 */
+.info-separator {
+    border-bottom: 1px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 正文内容段落样式 */
+.content-paragraph {
+    line-height: 1.8;
+    text-indent: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content-image {
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    padding-left: 40px;
+}
+
+/* 新闻详情整体容器样式，控制居中、边框等 */
+.news-container {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-bottom: none;
+}
+
+
+/*编辑新闻页样式*/
+/* 表单容器样式 */
+.edit-news-form {
+	width: 60%; /* 调整表单宽度，使其更合适 */
+	margin: 30px auto;
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 标签样式 */
+.form-label {
+	display: block;
+	margin-bottom: 8px;
+	color: #333;
+	font-weight: bold; /* 使标签文字加粗，更醒目 */
+	font-size: 16px;
+}
+
+/* 通用输入框样式 */
+.form-input {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+/* 标题输入框样式 */
+.title-input {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* 文本域样式 */
+.content-textarea {
+	height: 200px;
+}
+
+/* 提交按钮样式 */
+.submit-button {
+	background-color: #007bff;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.submit-button:hover {
+	background-color: #0056b3;
+}
+
+/*搜索结果页面样式*/
+.searchResultsContainer {
+	width: 80%;
+	margin: 20px auto;
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.searchResultCount {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.newsItem {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+
+.newsTitle {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.newsTitle a {
+	text-decoration: none;
+	color: #000;
+}
+
+.newsTitle a:hover {
+	cursor: pointer;
+	color: #528fda;
+	background-color: #f0f0f0;
+}
+
+.newsContent {
+	font-size: 14px;
+	color: #333;
+	line-height: 1.5;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	margin-bottom: 10px;
+}
+
+.newsAuthorTime {
+	font-size: 12px;
+	color: #999;
+}
+
+.newsAuthor {
+	margin-right: 10px;
+}
