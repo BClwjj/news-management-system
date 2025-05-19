@@ -1,5 +1,5 @@
 # 新闻管理系统
-![网站截图](./src/main/webapp/images/detail1.png)
+![网站截图](./News/src/webapp/images/detail1.png)
 
 基于 **Servlet/JSP + MySQL** 开发的新闻内容管理系统，支持新闻发布、分页展示、模糊搜索和管理员权限控制。
 
