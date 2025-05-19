@@ -23,12 +23,15 @@
 1. 新闻列表
    
 ![网站截图](./News/src/main/webapp/images/新闻列表.png)
+
 3. 新闻详情
 
 ![网站截图](./News/src/main/webapp/images/新闻详情.png)
+
 4. 新闻管理
 
 ![网站截图](./News/src/main/webapp/images/新闻管理.png)
+
 4.添加新闻
 
 ![网站截图](./News/src/main/webapp/images/添加新闻.png)
