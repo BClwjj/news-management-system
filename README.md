@@ -18,3 +18,13 @@
 2. 配置 `DBUtil.java` 中的数据库连接信息  
 3. 部署到Tomcat服务器  
 4. 访问 `http://localhost:8080/news/index.jsp`
+
+## 部分页面预览
+1. 新闻列表
+![网站截图](./News/src/main/webapp/images/新闻列表.png)
+2. 新闻详情
+![网站截图](./News/src/main/webapp/images/新闻详情.png)
+4. 新闻管理
+![网站截图](./News/src/main/webapp/images/新闻管理.png)
+4.添加新闻
+![网站截图](./News/src/main/webapp/images/添加新闻.png)
