@@ -1,5 +1,4 @@
 # 新闻管理系统
-![网站截图](./News/src/main/webapp/images/首页.png)
 
 基于 **Servlet/JSP + MySQL** 开发的新闻内容管理系统，支持新闻发布、分页展示、模糊搜索和管理员权限控制。
 
@@ -20,7 +19,11 @@
 4. 访问 `http://localhost:8080/news/index.jsp`
 
 ## 部分页面预览
-1. 新闻列表
+1. 新闻首页
+   
+![网站截图](./News/src/main/webapp/images/首页.png)
+
+2. 新闻列表
    
 ![网站截图](./News/src/main/webapp/images/新闻列表.png)
 
